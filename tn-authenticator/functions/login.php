@@ -64,7 +64,15 @@ function tn_auth_handle_verify() {
 	}
 
 	wp_set_current_user($user->ID);
-	wp_set_auth_cookie($user->ID, false); // shorter session; set to true if you want remember-me
+
+	// Let the password-reset integration associate the new session token with
+	// this PIN login without changing the user's other active sessions.
+	$GLOBALS['tn_auth_pin_login_in_progress'] = true;
+	try {
+		wp_set_auth_cookie($user->ID, false); // shorter session; set to true if you want remember-me
+	} finally {
+		unset($GLOBALS['tn_auth_pin_login_in_progress']);
+	}
 
 	// Fire core hook for compatibility (SSO, audit, etc.)
 	do_action('wp_login', $user->user_login, $user);

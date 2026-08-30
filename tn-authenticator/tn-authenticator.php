@@ -3,7 +3,7 @@
  * Plugin Name: TN Authenticator
  * Plugin URI: https://github.com/cchatterton/tn-authenticator
  * Description: Provides a plug-and-play PIN login page at /login-pin.
- * Version: 1.5
+ * Version: 1.6
  * Requires at least: 6.0
  * Requires PHP: 8.1
  * Author: Techn
@@ -13,7 +13,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TN_AUTH_VERSION', '1.5' );
+define( 'TN_AUTH_VERSION', '1.6' );
 define( 'TN_AUTH_PLUGIN_FILE', __FILE__ );
 define( 'TN_AUTH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TN_AUTH_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -24,6 +24,7 @@ foreach ( [
 	'email.php',
 	'shortcode.php',
 	'login.php',
+	'password-reset.php',
 	'redirect.php',
 	'route.php',
 	'github-updater.php',

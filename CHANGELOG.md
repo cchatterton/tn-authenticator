@@ -2,6 +2,12 @@
 
 All notable changes to TN Authenticator are recorded here.
 
+## 1.6 - 2026-08-31
+
+- Disabled native password reset controls for sessions authenticated with an emailed PIN.
+- Kept password reset controls available to username/password sessions, including concurrent sessions for the same account.
+- Added server-side validation to prevent direct profile password changes from a PIN-authenticated session.
+
 ## 1.5 - 2026-06-14
 
 - Added a code-driven `/login-pin` route and plugin template.
