@@ -1,19 +1,22 @@
 <?php
 /**
  * Plugin Name: TN Authenticator
- * Plugin URI: https://github.com/cchatterton/tn-authenticator
  * Description: Provides a plug-and-play PIN login page at /login-pin.
- * Version: 1.6
- * Requires at least: 6.0
- * Requires PHP: 8.1
+ * Version: 1.6.1
+ * Requires at least: 7.0
+ * Requires PHP: 8.5
  * Author: Techn
  * Author URI: https://techn.com.au
+ * Update URI: https://github.com/cchatterton/tn-authenticator
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Techn Controller API: 1
  * Text Domain: tn-authenticator
 */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'TN_AUTH_VERSION', '1.6' );
+define( 'TN_AUTH_VERSION', '1.6.1' );
 define( 'TN_AUTH_PLUGIN_FILE', __FILE__ );
 define( 'TN_AUTH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'TN_AUTH_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -27,7 +30,6 @@ foreach ( [
 	'password-reset.php',
 	'redirect.php',
 	'route.php',
-	'github-updater.php',
 ] as $file ) {
 	require_once $dir . $file;
 }
@@ -46,3 +48,6 @@ function tn_auth_activate(): void {
 function tn_auth_deactivate(): void {
 	flush_rewrite_rules();
 }
+
+require_once __DIR__ . '/functions/controller-client.php';
+tnuc_client_register(__FILE__, 'tn-authenticator');
