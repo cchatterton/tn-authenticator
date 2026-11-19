@@ -152,7 +152,7 @@ function tn_auth_settings() : array {
 	$defaults = [
 		'ttl'       => 5 * MINUTE_IN_SECONDS, // PIN lifetime (shorter by default)
 		'from_name' => get_bloginfo('name'),
-		'from_email'=> get_option('admin_email'),
+		'from_email'=> tn_auth_default_from_email(),
 		'subject'   => 'Your sign-in code for ' . get_bloginfo('name'),
 	];
 	$opt = get_option( TN_AUTH_OPTION_SETTINGS, [] );

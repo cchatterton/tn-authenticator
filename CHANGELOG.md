@@ -2,6 +2,12 @@
 
 All notable changes to TN Authenticator are recorded here.
 
+## 1.6.3 - 2026-11-20
+
+- Send OTP emails from `no-reply@<current-site-domain>` instead of the WordPress administrator email.
+- Remove a leading `www.` from the site hostname and fall back to the administrator email for invalid or local IP hosts.
+- Add the `tn_auth_from_email` filter for deployments that need an explicit sender override.
+
 ## 1.6.2 - 2026-09-26
 
 - Lower the PHP requirement to 7.4, matching WordPress 7.0.

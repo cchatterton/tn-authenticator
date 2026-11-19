@@ -3,7 +3,7 @@ Contributors:
 Tags: techn
 Requires at least: 7.0
 Tested up to: 7.1.2
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,9 @@ Provides a plug-and-play PIN login page at /login-pin.
 
 == Changelog ==
 
+= 1.6.3 =
+* Send OTP emails from no-reply at the current site's domain.
+
 = 1.6.2 =
 * Lower the PHP requirement to 7.4 to match WordPress 7.0; update the controller installation compatibility check.
 
@@ -33,7 +36,7 @@ Provides a plug-and-play PIN login page at /login-pin.
 
 == Managed updates ==
 
-Install and activate TN Update Controller to discover and install updates. The plugin row offers Install Techn Update Controller, Activate Techn Update Controller, or Check for updates according to local state and permissions. Feature operation does not require the controller. No release lookup happens while rendering this plugin's row. On multisite the controller must be network active. This plugin release requires WordPress 7.0 and PHP 8.5 or later.
+Install and activate TN Update Controller to discover and install updates. The plugin row offers Install Techn Update Controller, Activate Techn Update Controller, or Check for updates according to local state and permissions. Feature operation does not require the controller. No release lookup happens while rendering this plugin's row. On multisite the controller must be network active. This plugin release requires WordPress 7.0 and PHP 7.4 or later.
 
 == Controller installation service ==
 
